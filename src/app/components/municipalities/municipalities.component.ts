@@ -2181,8 +2181,8 @@ export class MunicipalitiesComponent implements OnInit {
     this.newMunicipalitiesForm = new FormGroup({
       id: new FormControl(''),
       NOMBRE: new FormControl('', Validators.required),
-      IGECEM: new FormControl('', Validators.required),
-      ALTITUD: new FormControl('', Validators.required),
+      IGECEM: new FormControl('', [Validators.required, Validators.pattern(/^-?(0|[1-9]\d*)?$/)]),
+      ALTITUD: new FormControl('', [Validators.required, Validators.pattern(/^-?(0|[1-9]\d*.?[1-9]?\d*)?$/)]),
       CABECERA: new FormControl('', Validators.required),
       CLIMA: new FormControl('', Validators.required),
       SIGNIFICADO: new FormControl('', Validators.required),
@@ -2409,8 +2409,8 @@ export class MunicipalitiesComponent implements OnInit {
         });
       });
   }
-  addFull(){
-    for (let x=0; x< this.mun.length;x++){
+  addFull() {
+    for (let x = 0; x < this.mun.length; x++) {
       this.new(this.mun[x]);
     }
 

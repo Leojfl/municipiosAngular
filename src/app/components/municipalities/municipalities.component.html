@@ -112,20 +112,17 @@
     <div class="col-md-6  offset-md-3" *ngFor="let user of municipalitiess">
       <div class="card mt-4">
         <div class="card-body">
-          <div class="row">
+          <div class="row m-0">
             <div class="col-8">
-              <div class="row">
+              <div class="row m-0">
                 <div class="col-md-12">
                   <h3>{{user.data.IGECEM + " " + user.data.NOMBRE}}</h3>
                 </div>
                 <div class="col-md-12">
-                  <b>Altitud: </b>{{user.data.ALTITUD}}
-                  <b>Cabecera: </b>{{user.data.CABECERA}}
-                  <b>Significado: </b>{{user.data.SIGNIFICADO}}
-                  <b>Superficie: </b>{{user.data.SUPERFICIE}}
-                </div>
-                <div class="col-md-12">
-                  <b>Edad: </b>{{user.data.edad}}
+                  <b>Altitud: </b>{{user.data.ALTITUD}}<br />
+                  <b>Cabecera: </b>{{user.data.CABECERA}}<br />
+                  <b>Significado: </b>{{user.data.SIGNIFICADO}}<br />
+                  <b>Superficie: </b>{{user.data.SUPERFICIE}}<br />
                 </div>
               </div>
             </div>
