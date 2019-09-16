@@ -43,6 +43,12 @@ export class FirestoreService {
     ).snapshotChanges();
   }
 
+  public getMunicipalitie(fieldPath, opStr, value) {
+    return this.firestore.collection('municipalities',
+      ref => ref.where(fieldPath, opStr, value)
+    ).snapshotChanges();
+  }
+
   public updateMunicipalities(municipalities, data: any) {
     return this.firestore.collection('municipalities').doc(municipalities.id).set(data);
   }

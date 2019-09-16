@@ -5,7 +5,7 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 
 // Firebase
-import {environment} from '../environments/environment';
+ import {environment} from '../environments/environment';
 import {AngularFireModule} from '@angular/fire';
 import {AngularFirestoreModule} from '@angular/fire/firestore';
 import {AngularFireAuthModule, AngularFireAuth} from '@angular/fire/auth';
@@ -26,6 +26,7 @@ import {MunicipalitiesComponent} from './components/municipalities/municipalitie
 import {AgmCoreModule} from '@agm/core';
 // icons
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
+import {from} from 'rxjs';
 
 
 @NgModule({
@@ -37,7 +38,15 @@ import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
   ],
   imports: [
     BrowserModule,
-    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireModule.initializeApp({
+      apiKey: 'AIzaSyBp9kqVfPA-9OLZEVxIQpYXIAvd_vwEQh8',
+      authDomain: 'example-e3b15.firebaseapp.com',
+      databaseURL: 'https://example-e3b15.firebaseio.com',
+      projectId: 'example-e3b15',
+      storageBucket: 'example-e3b15.appspot.com',
+      messagingSenderId: '162064246948',
+      appId: '1:162064246948:web:422ebd9020958e7f'
+    }),
     AngularFirestoreModule,
     AppRoutingModule,
     AngularFireAuthModule,
@@ -45,9 +54,16 @@ import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
     ReactiveFormsModule,
     FormsModule,
     ReactiveFormsModule,
-    SweetAlert2Module.forRoot(environment.sweetAlert),
+    SweetAlert2Module.forRoot({
+      buttonsStyling: false,
+      customClass: 'modal-content',
+      confirmButtonClass: 'btn btn-primary',
+      cancelButtonClass: 'btn',
+    }),
     BrowserAnimationsModule,
-    AgmCoreModule.forRoot(environment.mapsKey),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyAuYXawrzjug2cr4cJpHKqO26Bv9c8n4W8'
+    }),
     NgbModule,
     FontAwesomeModule,
   ],

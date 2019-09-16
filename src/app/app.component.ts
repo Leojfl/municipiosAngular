@@ -8,15 +8,19 @@ import {Router} from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  public authUser = null;
+  public static authUser = null;
+
+  public authUser1;
   public static admin = false;
 
   constructor(private authService: AuthService,
               private route: Router) {
-    if (this.authUser == null) {
+    this.authUser1 = AppComponent.authUser;
+    if (AppComponent.authUser == null) {
       this.route.navigate(['login']);
       authService.getUserAuth().subscribe((auth) => {
-        this.authUser = auth;
+        AppComponent.authUser = auth;
+        this.authUser1 = AppComponent.authUser;
         try {
           const email = auth.email;
           if (auth.email != null) {
