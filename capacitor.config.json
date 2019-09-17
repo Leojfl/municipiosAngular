@@ -1,0 +1,7 @@
+{
+  "appId": "com.angular.municipios",
+  "appName": "municipios",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www"
+}

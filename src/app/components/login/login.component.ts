@@ -4,6 +4,7 @@ import {Validators, FormControl} from '@angular/forms';
 import {AuthService} from '../../services/auth.service';
 import {Route, Router} from '@angular/router';
 import {SwalComponent} from '@sweetalert2/ngx-sweetalert2';
+import {findImportSpecifier} from '@angular/core/schematics/migrations/renderer-to-renderer2/util';
 
 @Component({
   selector: 'app-login',
@@ -36,6 +37,7 @@ export class LoginComponent implements OnInit {
       this.alertSwal.type = 'success';
       this.alertSwal.text = 'Bienvenido';
       this.alertSwal.show();
+      this.route.navigate(['municipalities']);
     }).catch(error => {
       console.log(error);
       console.log(this.alertSwal);

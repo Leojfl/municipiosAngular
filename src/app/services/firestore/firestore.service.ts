@@ -33,10 +33,10 @@ export class FirestoreService {
           query = query.where('inundacionCheck', '==', true);
         }
         if (sismo) {
-          query = query.where('deslaveCheck', '==', true);
+          query = query.where('sismoCheck', '==', true);
         }
         if (vocanes) {
-          query = query.where('volcanesCheck', '==', true);
+          query = query.where('vocanesCheck', '==', true);
         }
         return query.orderBy('IGECEM', 'desc');
       }
