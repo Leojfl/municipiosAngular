@@ -2,3 +2,72 @@
 .modal-content{
   height: 60vh!important;
 }
+.form-group {
+  position: relative;
+}
+.form-group .invalid-feedback {
+  margin-left: 10px;
+}
+.form-group label {
+  position: absolute;
+  margin-left: 15px;
+  left: 10px;
+  top: 12px;
+  background-color: white;
+  z-index: 10;
+  -webkit-transition: font-size 150ms ease-out, -webkit-transform 150ms ease-out;
+  transition: font-size 150ms ease-out, -webkit-transform 150ms ease-out;
+  transition: transform 150ms ease-out, font-size 150ms ease-out;
+  transition: transform 150ms ease-out, font-size 150ms ease-out, -webkit-transform 150ms ease-out;
+}
+.form-group label {
+  background-color: transparent;
+  color: #00aabf;
+}
+.form-group .form-control {
+  padding-bottom: 0;
+  position: relative;
+  display: block;
+  width: 100%;
+  height: calc(2.25rem + 12px);
+  font-size: 18px;
+  line-height: 1.5;
+  border: 2px solid #1b1464;
+  color: gray;
+  border-radius: 0.7em;
+  background-clip: padding-box;
+  -webkit-transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+}
+.form-group .form-control {
+  font-size: 1rem;
+  border: transparent;
+  border-radius: 1em 1em 0 0;
+  border-bottom: 4px solid #00aabf;
+  background: #e8ecfa;
+}
+.form-group .form-control:focus {
+  outline: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+
+
+.focused, label {
+  background: white;
+  -webkit-transform: translateY(-100%);
+  transform: translateY(-100%);
+  font-size: 0.8em;
+  padding: 0 4px;
+  text-align: center;
+  z-index: 10;
+}
+.focused {
+  -webkit-transform: translateY(-80%);
+  transform: translateY(-80%);
+  color: #00aabf;
+  font-size: 0.8em;
+}

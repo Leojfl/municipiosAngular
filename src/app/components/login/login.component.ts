@@ -33,10 +33,6 @@ export class LoginComponent implements OnInit {
 
   onSubmit(customerData) {
     this.authService.login(customerData.email, customerData.password).then(r => {
-      this.alertSwal.title = 'Correcto';
-      this.alertSwal.type = 'success';
-      this.alertSwal.text = 'Bienvenido';
-      this.alertSwal.show();
       this.route.navigate(['municipalities']);
     }).catch(error => {
       console.log(error);
